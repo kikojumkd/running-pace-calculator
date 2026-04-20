@@ -23,7 +23,7 @@
 			min="0"
 			max="99"
 			bind:value={hours}
-			class="w-full min-w-0 border border-stone-300 rounded-lg px-2 py-2 text-sm text-center focus:outline-none focus:border-stone-500 transition-colors"
+			class="w-full min-w-0 bg-white border border-stone-200 rounded-lg px-2 py-2 text-sm text-center focus:outline-none focus:border-stone-400 transition-colors"
 		/>
 		<div class="flex items-center justify-center text-stone-500 text-xl leading-none">:</div>
 		<input
@@ -32,7 +32,7 @@
 			min="0"
 			max="59"
 			bind:value={minutes}
-			class="w-full min-w-0 border border-stone-300 rounded-lg px-2 py-2 text-sm text-center focus:outline-none focus:border-stone-500 transition-colors"
+			class="w-full min-w-0 bg-white border border-stone-200 rounded-lg px-2 py-2 text-sm text-center focus:outline-none focus:border-stone-400 transition-colors"
 		/>
 		<div class="flex items-center justify-center text-stone-500 text-xl leading-none">:</div>
 		<input
@@ -41,7 +41,7 @@
 			min="0"
 			max="59"
 			bind:value={seconds}
-			class="w-full min-w-0 border border-stone-300 rounded-lg px-2 py-2 text-sm text-center focus:outline-none focus:border-stone-500 transition-colors"
+			class="w-full min-w-0 bg-white border border-stone-200 rounded-lg px-2 py-2 text-sm text-center focus:outline-none focus:border-stone-400 transition-colors"
 		/>
 	</div>
 </div>

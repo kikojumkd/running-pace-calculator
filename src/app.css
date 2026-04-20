@@ -6,13 +6,26 @@
 	box-sizing: border-box;
 }
 
-/* Flatten default input/button chrome so our own border utilities show cleanly.
-   Without this, some browsers render inputs with an inset 3D border. */
+/* Force light color-scheme so Windows / dark-mode browsers don't render the
+   default system 3D bezel on form controls. */
+html {
+	color-scheme: light;
+}
+
+/* Strip every source of the default 3D/beveled appearance on form controls.
+   UnoCSS presetWind ships no preflight, so this has to be explicit. */
 input,
-button {
+button,
+textarea,
+select {
 	-webkit-appearance: none;
+	-moz-appearance: none;
 	appearance: none;
-	background-clip: padding-box;
+	background-image: none;
+	box-shadow: none;
+	font: inherit;
+	color: inherit;
+	line-height: inherit;
 }
 
 /* Remove native number input spinners across all browsers */
@@ -26,9 +39,16 @@ input[type='number'] {
 	-moz-appearance: textfield;
 }
 
-/* Suppress browser default focus ring; border-color change provides focus indication */
+/* Suppress browser default focus ring on all form controls; we convey focus
+   with border-color changes on our own utility border. */
 input:focus,
-input:focus-visible {
+input:focus-visible,
+button:focus,
+button:focus-visible,
+textarea:focus,
+textarea:focus-visible,
+select:focus,
+select:focus-visible {
 	outline: none;
 	box-shadow: none;
 }
