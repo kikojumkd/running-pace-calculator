@@ -7,7 +7,7 @@
 	} = $props();
 </script>
 
-<div class="bg-white rounded-2xl border border-stone-200 shadow-sm p-4">
+<div class="bg-white rounded-2xl border border-stone-200 shadow-sm p-4 overflow-hidden">
 	<p class="text-[10px] font-semibold uppercase tracking-widest text-stone-400 mb-3">Distance</p>
 
 	<!-- Unit toggle -->

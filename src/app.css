@@ -8,3 +8,10 @@ input[type='number']::-webkit-inner-spin-button {
 input[type='number'] {
 	appearance: textfield;
 }
+
+/* Suppress browser default focus ring; border-color change provides focus indication */
+input:focus,
+input:focus-visible {
+	outline: none;
+	box-shadow: none;
+}
