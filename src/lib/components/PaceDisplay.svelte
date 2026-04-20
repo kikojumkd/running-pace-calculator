@@ -8,7 +8,7 @@
 	} = $props();
 </script>
 
-<div class="bg-white rounded-2xl border border-stone-200 p-5">
+<div class="bg-white rounded-2xl border border-stone-200 shadow-sm p-4">
 	<p class="text-[10px] font-semibold uppercase tracking-widest text-stone-400 mb-3">Your pace</p>
 
 	<!-- Primary pace -->
@@ -21,12 +21,12 @@
 
 	<!-- Secondary stats -->
 	<div class="grid grid-cols-2 gap-3">
-		<div class="bg-stone-50 rounded-xl p-3.5">
+		<div class="bg-stone-50 rounded-xl p-3">
 			<p class="text-xs text-stone-400 mb-1">Per mile</p>
 			<p class="text-2xl font-bold tabular-nums">{formatPace(pacePerMile)}</p>
 			<p class="text-xs text-stone-400 mt-0.5">min / mile</p>
 		</div>
-		<div class="bg-stone-50 rounded-xl p-3.5">
+		<div class="bg-stone-50 rounded-xl p-3">
 			<p class="text-xs text-stone-400 mb-1">Finish time</p>
 			<p class="text-2xl font-bold tabular-nums">{formatDuration(totalSeconds)}</p>
 			<p class="text-xs text-stone-400 mt-0.5">total</p>

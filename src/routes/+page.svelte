@@ -47,7 +47,7 @@
 		<button
 			type="button"
 			onclick={reset}
-			class="w-full min-h-[44px] bg-white border border-stone-300 hover:bg-stone-50 active:bg-stone-100 text-stone-700 font-medium rounded-2xl transition-colors text-sm cursor-pointer"
+			class="w-full min-h-[44px] bg-white border border-stone-200 shadow-sm hover:bg-stone-50 active:bg-stone-100 text-stone-700 font-medium rounded-2xl transition-colors text-sm cursor-pointer"
 		>
 			Reset
 		</button>

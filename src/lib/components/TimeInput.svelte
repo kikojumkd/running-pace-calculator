@@ -6,7 +6,7 @@
 	} = $props();
 </script>
 
-<div class="bg-white rounded-2xl border border-stone-200 p-5">
+<div class="bg-white rounded-2xl border border-stone-200 shadow-sm p-4">
 	<p class="text-[10px] font-semibold uppercase tracking-widest text-stone-400 mb-3">Time</p>
 
 	<div class="flex gap-2">
@@ -18,11 +18,11 @@
 				min="0"
 				max="99"
 				bind:value={hours}
-				class="w-full min-h-[44px] border border-stone-300 rounded-xl px-3.5 py-2.5 text-base text-center focus:outline-none focus:border-stone-500 transition-colors"
+				class="w-full border border-stone-300 rounded-lg px-2 py-2 text-sm text-center focus:outline-none focus:border-stone-500 transition-colors"
 			/>
 		</div>
 
-		<span class="self-end text-stone-400 text-xl font-light mb-2.5">:</span>
+		<span class="self-end text-stone-400 text-xl font-light mb-[18px]">:</span>
 
 		<div class="flex-1 flex flex-col gap-1.5">
 			<label for="time-minutes" class="text-sm text-stone-600">Minutes</label>
@@ -32,11 +32,11 @@
 				min="0"
 				max="59"
 				bind:value={minutes}
-				class="w-full min-h-[44px] border border-stone-300 rounded-xl px-3.5 py-2.5 text-base text-center focus:outline-none focus:border-stone-500 transition-colors"
+				class="w-full border border-stone-300 rounded-lg px-2 py-2 text-sm text-center focus:outline-none focus:border-stone-500 transition-colors"
 			/>
 		</div>
 
-		<span class="self-end text-stone-400 text-xl font-light mb-2.5">:</span>
+		<span class="self-end text-stone-400 text-xl font-light mb-[18px]">:</span>
 
 		<div class="flex-1 flex flex-col gap-1.5">
 			<label for="time-seconds" class="text-sm text-stone-600">Seconds</label>
@@ -46,7 +46,7 @@
 				min="0"
 				max="59"
 				bind:value={seconds}
-				class="w-full min-h-[44px] border border-stone-300 rounded-xl px-3.5 py-2.5 text-base text-center focus:outline-none focus:border-stone-500 transition-colors"
+				class="w-full border border-stone-300 rounded-lg px-2 py-2 text-sm text-center focus:outline-none focus:border-stone-500 transition-colors"
 			/>
 		</div>
 	</div>

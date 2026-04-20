@@ -7,7 +7,7 @@
 	} = $props();
 </script>
 
-<div class="bg-white rounded-2xl border border-stone-200 p-5">
+<div class="bg-white rounded-2xl border border-stone-200 shadow-sm p-4">
 	<p class="text-[10px] font-semibold uppercase tracking-widest text-stone-400 mb-3">Distance</p>
 
 	<!-- Unit toggle -->
@@ -15,14 +15,14 @@
 		<button
 			type="button"
 			onclick={() => (unit = 'km')}
-			class="py-2.5 text-sm font-medium border-0 cursor-pointer transition-colors {unit === 'km'
+			class="py-2 text-sm font-medium border-0 cursor-pointer transition-colors {unit === 'km'
 				? 'bg-stone-100 text-stone-800 font-semibold'
 				: 'bg-white text-stone-500 hover:bg-stone-50'}"
 		>km</button>
 		<button
 			type="button"
 			onclick={() => (unit = 'miles')}
-			class="py-2.5 text-sm font-medium border-0 border-l border-stone-300 cursor-pointer transition-colors {unit === 'miles'
+			class="py-2 text-sm font-medium border-0 border-l border-stone-300 cursor-pointer transition-colors {unit === 'miles'
 				? 'bg-stone-100 text-stone-800 font-semibold'
 				: 'bg-white text-stone-500 hover:bg-stone-50'}"
 		>miles</button>
@@ -35,6 +35,6 @@
 		min="0"
 		step="0.1"
 		bind:value={distance}
-		class="w-full min-h-[44px] border border-stone-300 rounded-xl px-3.5 py-2.5 text-base focus:outline-none focus:border-stone-500 transition-colors"
+		class="w-full border border-stone-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-stone-500 transition-colors"
 	/>
 </div>
