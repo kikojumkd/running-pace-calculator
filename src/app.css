@@ -1,9 +1,17 @@
-/* Global box-sizing so width/padding/border behave predictably (UnoCSS presetWind
-   doesn't ship a preflight, so this is explicit). */
+/* Global box-sizing + border reset. UnoCSS presetWind ships no preflight, so
+   without this:
+   - box-sizing defaults to content-box (inputs overflow their containers)
+   - border-style is whatever the UA says: inset for <input> and outset for
+     <button>, which is the source of the two-tone 3D bevel (dark on
+     top/left for inputs, dark on bottom/right for buttons). Forcing solid
+     everywhere is how Tailwind's preflight fixes it. */
 *,
 *::before,
 *::after {
 	box-sizing: border-box;
+	border-width: 0;
+	border-style: solid;
+	border-color: currentColor;
 }
 
 /* Force light color-scheme so Windows / dark-mode browsers don't render the
