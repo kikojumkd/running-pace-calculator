@@ -6,6 +6,15 @@
 	box-sizing: border-box;
 }
 
+/* Flatten default input/button chrome so our own border utilities show cleanly.
+   Without this, some browsers render inputs with an inset 3D border. */
+input,
+button {
+	-webkit-appearance: none;
+	appearance: none;
+	background-clip: padding-box;
+}
+
 /* Remove native number input spinners across all browsers */
 input[type='number']::-webkit-outer-spin-button,
 input[type='number']::-webkit-inner-spin-button {
@@ -14,7 +23,7 @@ input[type='number']::-webkit-inner-spin-button {
 }
 
 input[type='number'] {
-	appearance: textfield;
+	-moz-appearance: textfield;
 }
 
 /* Suppress browser default focus ring; border-color change provides focus indication */

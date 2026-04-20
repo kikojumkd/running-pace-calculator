@@ -27,21 +27,21 @@
 <div class="bg-white rounded-2xl border border-stone-200 shadow-sm p-4 overflow-hidden">
 	<p class="text-[10px] font-semibold uppercase tracking-widest text-stone-400 mb-3">Distance</p>
 
-	<!-- Unit toggle -->
-	<div class="grid grid-cols-2 rounded-xl border border-stone-300 overflow-hidden mb-4">
+	<!-- Unit toggle: two separate pill buttons -->
+	<div class="grid grid-cols-2 gap-3 mb-4">
 		<button
 			type="button"
 			onclick={() => (unit = 'km')}
-			class="py-2 text-sm font-medium border-0 cursor-pointer transition-colors {unit === 'km'
-				? 'bg-stone-100 text-stone-800 font-semibold'
-				: 'bg-white text-stone-500 hover:bg-stone-50'}"
+			class="py-2.5 text-sm rounded-xl border border-stone-200 cursor-pointer transition-colors {unit === 'km'
+				? 'bg-white text-stone-800 font-semibold'
+				: 'bg-stone-100 text-stone-600 hover:bg-stone-50'}"
 		>km</button>
 		<button
 			type="button"
 			onclick={() => (unit = 'miles')}
-			class="py-2 text-sm font-medium border-0 border-l border-stone-300 cursor-pointer transition-colors {unit === 'miles'
-				? 'bg-stone-100 text-stone-800 font-semibold'
-				: 'bg-white text-stone-500 hover:bg-stone-50'}"
+			class="py-2.5 text-sm rounded-xl border border-stone-200 cursor-pointer transition-colors {unit === 'miles'
+				? 'bg-white text-stone-800 font-semibold'
+				: 'bg-stone-100 text-stone-600 hover:bg-stone-50'}"
 		>miles</button>
 	</div>
 
