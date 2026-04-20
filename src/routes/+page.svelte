@@ -64,7 +64,7 @@
 				<button
 					type="button"
 					onclick={reset}
-					class="w-full min-h-[44px] bg-gray-100 hover:bg-gray-200 active:bg-gray-300 text-gray-600 font-semibold rounded-2xl transition-colors text-sm"
+					class="w-full min-h-[44px] border-0 bg-gray-100 hover:bg-gray-200 active:bg-gray-300 text-gray-600 font-semibold rounded-2xl transition-colors text-sm cursor-pointer"
 				>
 					Reset
 				</button>

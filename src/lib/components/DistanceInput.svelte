@@ -22,14 +22,14 @@
 			<button
 				type="button"
 				onclick={() => (unit = 'km')}
-				class="px-5 min-h-[44px] font-semibold text-sm transition-colors {unit === 'km'
+				class="px-5 min-h-[44px] border-0 font-semibold text-sm transition-colors cursor-pointer {unit === 'km'
 					? 'bg-blue-500 text-white'
 					: 'text-gray-500 hover:bg-gray-50'}"
 			>km</button>
 			<button
 				type="button"
 				onclick={() => (unit = 'miles')}
-				class="px-5 min-h-[44px] font-semibold text-sm transition-colors {unit === 'miles'
+				class="px-5 min-h-[44px] border-0 font-semibold text-sm transition-colors cursor-pointer {unit === 'miles'
 					? 'bg-blue-500 text-white'
 					: 'text-gray-500 hover:bg-gray-50'}"
 			>mi</button>
