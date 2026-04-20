@@ -10,7 +10,7 @@
 	<p class="text-[10px] font-semibold uppercase tracking-widest text-stone-400 mb-3">Time</p>
 
 	<!-- Grid: labels in row 1, inputs + colons in row 2 -->
-	<div class="grid gap-x-2" style="grid-template-columns: 1fr 16px 1fr 16px 1fr">
+	<div class="grid gap-x-2" style="grid-template-columns: 1fr 14px 1fr 14px 1fr">
 		<label for="time-hours" class="text-sm text-stone-600 mb-1.5">Hours</label>
 		<div></div>
 		<label for="time-minutes" class="text-sm text-stone-600 mb-1.5">Minutes</label>
@@ -25,7 +25,7 @@
 			bind:value={hours}
 			class="w-full border border-stone-300 rounded-lg px-2 py-2 text-sm text-center focus:outline-none focus:border-stone-500 transition-colors"
 		/>
-		<div class="flex items-center justify-center text-stone-400 text-lg font-light">:</div>
+		<div class="flex items-center justify-center text-stone-500 text-xl leading-none">:</div>
 		<input
 			id="time-minutes"
 			type="number"
@@ -34,7 +34,7 @@
 			bind:value={minutes}
 			class="w-full border border-stone-300 rounded-lg px-2 py-2 text-sm text-center focus:outline-none focus:border-stone-500 transition-colors"
 		/>
-		<div class="flex items-center justify-center text-stone-400 text-lg font-light">:</div>
+		<div class="flex items-center justify-center text-stone-500 text-xl leading-none">:</div>
 		<input
 			id="time-seconds"
 			type="number"

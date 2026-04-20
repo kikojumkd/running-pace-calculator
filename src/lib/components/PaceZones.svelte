@@ -24,7 +24,7 @@
 	<!-- Gradient bar with position marker -->
 	<div
 		class="relative h-1.5 rounded-full mb-4"
-		style="background: linear-gradient(to right, #86efac, #22c55e 28%, #60a5fa 60%, #f87171 100%)"
+		style="background: linear-gradient(to right, #86efac 0%, #22c55e 40%, #3b82f6 60%, #ef4444 100%)"
 	>
 		{#if barPos !== null}
 			<div
@@ -38,7 +38,9 @@
 	<div class="space-y-0.5">
 		{#each PACE_ZONES as zone}
 			{@const isActive = activeZone?.name === zone.name}
-			<div class="flex items-center gap-2.5 py-1.5">
+			<div
+				class="flex items-center gap-2.5 py-1.5 px-2 -mx-2 rounded-lg {isActive ? 'bg-stone-100' : ''}"
+			>
 				<div class="w-2.5 h-2.5 rounded-full flex-shrink-0 {zoneDotClass(zone.name)}"></div>
 				<span class="flex-1 text-sm {isActive ? 'font-bold text-stone-900' : 'text-stone-500'}">
 					{zone.label}
