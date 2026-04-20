@@ -35,6 +35,6 @@
 		min="0"
 		step="0.1"
 		bind:value={distance}
-		class="w-full border border-stone-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-stone-500 transition-colors"
+		class="block w-full min-w-0 border border-stone-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-stone-500 transition-colors"
 	/>
 </div>

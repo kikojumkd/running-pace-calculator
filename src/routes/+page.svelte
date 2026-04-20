@@ -29,7 +29,7 @@
 	<title>Running Pace Calculator</title>
 </svelte:head>
 
-<main class="min-h-screen bg-[#ece9e3] px-4 py-8">
+<main class="min-h-screen bg-[#ece9e3] px-4 py-8 overflow-x-hidden">
 	<div class="max-w-md mx-auto space-y-3">
 
 		<DistanceInput bind:distance bind:unit />
