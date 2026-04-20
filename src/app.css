@@ -1,3 +1,11 @@
+/* Global box-sizing so width/padding/border behave predictably (UnoCSS presetWind
+   doesn't ship a preflight, so this is explicit). */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
 /* Remove native number input spinners across all browsers */
 input[type='number']::-webkit-outer-spin-button,
 input[type='number']::-webkit-inner-spin-button {
