@@ -1,53 +1,49 @@
 <script lang="ts">
-	import { PACE_ZONES, getPaceZone } from '$lib/utils/pace';
+	import { PACE_ZONES, getPaceZone, getBarPosition } from '$lib/utils/pace';
 
 	let { pacePerKm }: { pacePerKm: number } = $props();
 
 	let activeZone = $derived(getPaceZone(pacePerKm));
-
-	function zoneActiveClass(name: string): string {
-		const map: Record<string, string> = {
-			zone1: 'bg-green-50 ring-2 ring-green-300',
-			zone2: 'bg-sky-50 ring-2 ring-sky-300',
-			zone3: 'bg-yellow-50 ring-2 ring-yellow-300',
-			zone4: 'bg-orange-50 ring-2 ring-orange-300',
-			zone5: 'bg-red-50 ring-2 ring-red-300'
-		};
-		return map[name] ?? '';
-	}
+	let barPos = $derived(getBarPosition(pacePerKm));
 
 	function zoneDotClass(name: string): string {
 		const map: Record<string, string> = {
-			zone1: 'bg-green-400',
-			zone2: 'bg-sky-400',
-			zone3: 'bg-yellow-400',
-			zone4: 'bg-orange-400',
+			zone1: 'bg-green-300',
+			zone2: 'bg-green-500',
+			zone3: 'bg-blue-400',
+			zone4: 'bg-blue-600',
 			zone5: 'bg-red-400'
 		};
-		return map[name] ?? 'bg-gray-300';
+		return map[name] ?? 'bg-stone-300';
 	}
 </script>
 
-<div class="space-y-2">
-	<h2 class="text-xs font-semibold text-gray-500 uppercase tracking-widest">Pace Zones</h2>
-	<div class="space-y-1.5">
+<div class="bg-white rounded-2xl border border-stone-200 p-5">
+	<p class="text-[10px] font-semibold uppercase tracking-widest text-stone-400 mb-3">Pace zones</p>
+
+	<!-- Gradient bar with position marker -->
+	<div
+		class="relative h-1.5 rounded-full mb-4"
+		style="background: linear-gradient(to right, #86efac, #22c55e 28%, #60a5fa 60%, #f87171 100%)"
+	>
+		{#if barPos !== null}
+			<div
+				class="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-3.5 h-3.5 bg-white rounded-full border-2 border-stone-400 shadow-sm transition-all duration-300"
+				style="left: {barPos}%"
+			></div>
+		{/if}
+	</div>
+
+	<!-- Zone list -->
+	<div class="space-y-0.5">
 		{#each PACE_ZONES as zone}
 			{@const isActive = activeZone?.name === zone.name}
-			<div
-				class="flex items-center gap-3 px-3 py-2.5 rounded-xl transition-all duration-200 {isActive
-					? zoneActiveClass(zone.name)
-					: 'bg-gray-50'}"
-			>
+			<div class="flex items-center gap-2.5 py-1.5">
 				<div class="w-2.5 h-2.5 rounded-full flex-shrink-0 {zoneDotClass(zone.name)}"></div>
-				<span class="flex-1 text-sm font-medium {isActive ? 'text-gray-900' : 'text-gray-500'}">
+				<span class="flex-1 text-sm {isActive ? 'font-bold text-stone-900' : 'text-stone-500'}">
 					{zone.label}
 				</span>
-				<span class="text-xs text-gray-400 font-mono">{zone.description}</span>
-				{#if isActive}
-					<span class="text-xs font-semibold text-gray-700 bg-white px-2 py-0.5 rounded-full shadow-sm">
-						Active
-					</span>
-				{/if}
+				<span class="text-xs text-stone-400 font-mono">{zone.description}</span>
 			</div>
 		{/each}
 	</div>

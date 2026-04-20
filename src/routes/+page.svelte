@@ -29,47 +29,28 @@
 	<title>Running Pace Calculator</title>
 </svelte:head>
 
-<main class="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 px-4 py-8 md:py-12">
-	<div class="max-w-lg mx-auto space-y-6">
+<main class="min-h-screen bg-[#ece9e3] px-4 py-8">
+	<div class="max-w-md mx-auto space-y-3">
 
-		<header class="text-center space-y-1">
-			<h1 class="text-3xl font-bold text-gray-900 tracking-tight">Running Pace</h1>
-			<p class="text-gray-500 text-sm">Enter distance and time to calculate your pace</p>
-		</header>
+		<DistanceInput bind:distance bind:unit />
 
-		<div class="bg-white rounded-3xl shadow-lg overflow-hidden">
-			<div class="p-6 space-y-6">
+		<TimeInput bind:hours bind:minutes bind:seconds />
 
-				<DistanceInput bind:distance bind:unit />
+		<PaceDisplay
+			pacePerKm={pace.pacePerKm}
+			pacePerMile={pace.pacePerMile}
+			totalSeconds={pace.totalSeconds}
+		/>
 
-				<div class="border-t border-gray-100"></div>
+		<PaceZones pacePerKm={pace.pacePerKm} />
 
-				<TimeInput bind:hours bind:minutes bind:seconds />
-
-				<div class="border-t border-gray-100"></div>
-
-				<PaceDisplay
-					pacePerKm={pace.pacePerKm}
-					pacePerMile={pace.pacePerMile}
-					totalSeconds={pace.totalSeconds}
-				/>
-
-				<div class="border-t border-gray-100"></div>
-
-				<PaceZones pacePerKm={pace.pacePerKm} />
-
-			</div>
-
-			<div class="px-6 pb-6">
-				<button
-					type="button"
-					onclick={reset}
-					class="w-full min-h-[44px] border-0 bg-gray-100 hover:bg-gray-200 active:bg-gray-300 text-gray-600 font-semibold rounded-2xl transition-colors text-sm cursor-pointer"
-				>
-					Reset
-				</button>
-			</div>
-		</div>
+		<button
+			type="button"
+			onclick={reset}
+			class="w-full min-h-[44px] bg-white border border-stone-300 hover:bg-stone-50 active:bg-stone-100 text-stone-700 font-medium rounded-2xl transition-colors text-sm cursor-pointer"
+		>
+			Reset
+		</button>
 
 	</div>
 </main>

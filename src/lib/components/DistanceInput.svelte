@@ -7,32 +7,34 @@
 	} = $props();
 </script>
 
-<div class="space-y-2">
-	<label for="distance" class="block text-xs font-semibold text-gray-500 uppercase tracking-widest">Distance</label>
-	<div class="flex gap-2">
-		<input
-			id="distance"
-			type="number"
-			min="0"
-			step="0.1"
-			bind:value={distance}
-			class="flex-1 min-h-[44px] px-4 py-2 text-xl font-semibold border-2 border-gray-200 rounded-xl focus:border-blue-500 focus:outline-none transition-colors bg-white"
-		/>
-		<div class="flex rounded-xl overflow-hidden border-2 border-gray-200 bg-white">
-			<button
-				type="button"
-				onclick={() => (unit = 'km')}
-				class="px-5 min-h-[44px] border-0 font-semibold text-sm transition-colors cursor-pointer {unit === 'km'
-					? 'bg-blue-500 text-white'
-					: 'text-gray-500 hover:bg-gray-50'}"
-			>km</button>
-			<button
-				type="button"
-				onclick={() => (unit = 'miles')}
-				class="px-5 min-h-[44px] border-0 font-semibold text-sm transition-colors cursor-pointer {unit === 'miles'
-					? 'bg-blue-500 text-white'
-					: 'text-gray-500 hover:bg-gray-50'}"
-			>mi</button>
-		</div>
+<div class="bg-white rounded-2xl border border-stone-200 p-5">
+	<p class="text-[10px] font-semibold uppercase tracking-widest text-stone-400 mb-3">Distance</p>
+
+	<!-- Unit toggle -->
+	<div class="grid grid-cols-2 rounded-xl border border-stone-300 overflow-hidden mb-4">
+		<button
+			type="button"
+			onclick={() => (unit = 'km')}
+			class="py-2.5 text-sm font-medium border-0 cursor-pointer transition-colors {unit === 'km'
+				? 'bg-stone-100 text-stone-800 font-semibold'
+				: 'bg-white text-stone-500 hover:bg-stone-50'}"
+		>km</button>
+		<button
+			type="button"
+			onclick={() => (unit = 'miles')}
+			class="py-2.5 text-sm font-medium border-0 border-l border-stone-300 cursor-pointer transition-colors {unit === 'miles'
+				? 'bg-stone-100 text-stone-800 font-semibold'
+				: 'bg-white text-stone-500 hover:bg-stone-50'}"
+		>miles</button>
 	</div>
+
+	<label for="distance" class="block text-sm text-stone-600 mb-1.5">Distance</label>
+	<input
+		id="distance"
+		type="number"
+		min="0"
+		step="0.1"
+		bind:value={distance}
+		class="w-full min-h-[44px] border border-stone-300 rounded-xl px-3.5 py-2.5 text-base focus:outline-none focus:border-stone-500 transition-colors"
+	/>
 </div>

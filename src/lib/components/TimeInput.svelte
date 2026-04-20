@@ -6,44 +6,48 @@
 	} = $props();
 </script>
 
-<div class="space-y-2">
-	<label for="time-minutes" class="block text-xs font-semibold text-gray-500 uppercase tracking-widest">Time</label>
-	<div class="flex gap-2 items-start">
-		<div class="flex-1 flex flex-col items-center gap-1">
+<div class="bg-white rounded-2xl border border-stone-200 p-5">
+	<p class="text-[10px] font-semibold uppercase tracking-widest text-stone-400 mb-3">Time</p>
+
+	<div class="flex gap-2">
+		<div class="flex-1 flex flex-col gap-1.5">
+			<label for="time-hours" class="text-sm text-stone-600">Hours</label>
 			<input
-				aria-label="Hours"
+				id="time-hours"
 				type="number"
 				min="0"
 				max="99"
 				bind:value={hours}
-				class="w-full min-h-[44px] px-2 py-2 text-xl font-semibold text-center border-2 border-gray-200 rounded-xl focus:border-blue-500 focus:outline-none transition-colors bg-white"
+				class="w-full min-h-[44px] border border-stone-300 rounded-xl px-3.5 py-2.5 text-base text-center focus:outline-none focus:border-stone-500 transition-colors"
 			/>
-			<span class="text-xs text-gray-400">hrs</span>
 		</div>
-		<span class="text-2xl font-bold text-gray-300 mt-2">:</span>
-		<div class="flex-1 flex flex-col items-center gap-1">
+
+		<span class="self-end text-stone-400 text-xl font-light mb-2.5">:</span>
+
+		<div class="flex-1 flex flex-col gap-1.5">
+			<label for="time-minutes" class="text-sm text-stone-600">Minutes</label>
 			<input
 				id="time-minutes"
-				aria-label="Minutes"
 				type="number"
 				min="0"
 				max="59"
 				bind:value={minutes}
-				class="w-full min-h-[44px] px-2 py-2 text-xl font-semibold text-center border-2 border-gray-200 rounded-xl focus:border-blue-500 focus:outline-none transition-colors bg-white"
+				class="w-full min-h-[44px] border border-stone-300 rounded-xl px-3.5 py-2.5 text-base text-center focus:outline-none focus:border-stone-500 transition-colors"
 			/>
-			<span class="text-xs text-gray-400">min</span>
 		</div>
-		<span class="text-2xl font-bold text-gray-300 mt-2">:</span>
-		<div class="flex-1 flex flex-col items-center gap-1">
+
+		<span class="self-end text-stone-400 text-xl font-light mb-2.5">:</span>
+
+		<div class="flex-1 flex flex-col gap-1.5">
+			<label for="time-seconds" class="text-sm text-stone-600">Seconds</label>
 			<input
-				aria-label="Seconds"
+				id="time-seconds"
 				type="number"
 				min="0"
 				max="59"
 				bind:value={seconds}
-				class="w-full min-h-[44px] px-2 py-2 text-xl font-semibold text-center border-2 border-gray-200 rounded-xl focus:border-blue-500 focus:outline-none transition-colors bg-white"
+				class="w-full min-h-[44px] border border-stone-300 rounded-xl px-3.5 py-2.5 text-base text-center focus:outline-none focus:border-stone-500 transition-colors"
 			/>
-			<span class="text-xs text-gray-400">sec</span>
 		</div>
 	</div>
 </div>
