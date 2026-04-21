@@ -28,7 +28,7 @@
 	];
 
 	function selectPreset(km: number) {
-		distance = unit === 'km' ? km : roundDistance(kmToMiles(km));
+		distance = unit === 'km' ? roundDistance(km) : roundDistance(kmToMiles(km));
 	}
 
 	function isPresetActive(km: number): boolean {
