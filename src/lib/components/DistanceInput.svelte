@@ -1,11 +1,19 @@
 <script lang="ts">
 	import type { DistanceUnit } from '$lib/types';
-	import { kmToMiles } from '$lib/utils/pace';
+	import { kmToMiles, milesToKm } from '$lib/utils/pace';
 
 	let { distance = $bindable(10), unit = $bindable<DistanceUnit>('km') }: {
 		distance: number;
 		unit: DistanceUnit;
 	} = $props();
+
+	function setUnit(newUnit: DistanceUnit) {
+		if (newUnit === unit) return;
+		distance = newUnit === 'miles'
+			? Number(kmToMiles(distance).toFixed(2))
+			: Number(milesToKm(distance).toFixed(2));
+		unit = newUnit;
+	}
 
 	const PRESETS: { label: string; km: number }[] = [
 		{ label: '5K', km: 5 },
@@ -24,47 +32,47 @@
 	}
 </script>
 
-<div class="bg-white rounded-2xl border border-stone-200 shadow-sm p-4 overflow-hidden">
-	<p class="text-[10px] font-semibold uppercase tracking-widest text-stone-400 mb-3">Distance</p>
+<div class="bg-[var(--card)] border-[0.5px] rounded-2xl p-4 overflow-hidden">
+	<p class="text-[10px] font-semibold uppercase tracking-widest text-[color:var(--ink3)] mb-3">Distance</p>
 
-	<!-- Unit toggle: two separate pill buttons -->
-	<div class="grid grid-cols-2 gap-3 mb-4">
+	<!-- Unit toggle: segmented control on a --surface track -->
+	<div class="grid grid-cols-2 gap-1 p-1 rounded-xl bg-[var(--surface)] mb-4">
 		<button
 			type="button"
-			onclick={() => (unit = 'km')}
-			class="py-2.5 text-sm rounded-xl border border-stone-200 cursor-pointer transition-colors {unit === 'km'
-				? 'bg-white text-stone-800 font-semibold'
-				: 'bg-stone-100 text-stone-600 hover:bg-stone-50'}"
+			onclick={() => setUnit('km')}
+			class="py-2 text-sm rounded-lg cursor-pointer transition-colors {unit === 'km'
+				? 'bg-[var(--volt)] text-[color:var(--ink)] font-semibold'
+				: 'bg-transparent text-[color:var(--ink2)]'}"
 		>km</button>
 		<button
 			type="button"
-			onclick={() => (unit = 'miles')}
-			class="py-2.5 text-sm rounded-xl border border-stone-200 cursor-pointer transition-colors {unit === 'miles'
-				? 'bg-white text-stone-800 font-semibold'
-				: 'bg-stone-100 text-stone-600 hover:bg-stone-50'}"
+			onclick={() => setUnit('miles')}
+			class="py-2 text-sm rounded-lg cursor-pointer transition-colors {unit === 'miles'
+				? 'bg-[var(--volt)] text-[color:var(--ink)] font-semibold'
+				: 'bg-transparent text-[color:var(--ink2)]'}"
 		>miles</button>
 	</div>
 
-	<!-- Preset distances -->
+	<!-- Preset distances (ink scale only; no volt) -->
 	<div class="grid grid-cols-4 gap-2 mb-4">
 		{#each PRESETS as preset}
 			<button
 				type="button"
 				onclick={() => selectPreset(preset.km)}
-				class="py-1.5 text-xs font-medium rounded-lg border cursor-pointer transition-colors {isPresetActive(preset.km)
-					? 'bg-stone-100 border-stone-400 text-stone-800 font-semibold'
-					: 'bg-white border-stone-300 text-stone-500 hover:bg-stone-50'}"
+				class="py-1.5 text-xs font-medium rounded-lg border-[0.5px] cursor-pointer transition-colors {isPresetActive(preset.km)
+					? 'bg-[var(--surface)] text-[color:var(--ink)] font-semibold'
+					: 'bg-transparent text-[color:var(--ink2)] hover:bg-black/5'}"
 			>{preset.label}</button>
 		{/each}
 	</div>
 
-	<label for="distance" class="block text-sm text-stone-600 mb-1.5">Distance</label>
+	<label for="distance" class="block text-sm text-[color:var(--ink2)] mb-1.5">Distance</label>
 	<input
 		id="distance"
 		type="number"
 		min="0"
 		step="0.1"
 		bind:value={distance}
-		class="block w-full min-w-0 bg-white border border-stone-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-stone-400 transition-colors"
+		class="block w-full min-w-0 bg-[var(--surface)] border-[0.5px] rounded-lg px-3 py-2 text-sm text-[color:var(--ink)] focus:outline-none transition-colors"
 	/>
 </div>
