@@ -10,8 +10,8 @@
 	function setUnit(newUnit: DistanceUnit) {
 		if (newUnit === unit) return;
 		distance = newUnit === 'miles'
-			? Number(kmToMiles(distance).toFixed(4))
-			: Number(milesToKm(distance).toFixed(4));
+			? Number(kmToMiles(distance).toFixed(2))
+			: Number(milesToKm(distance).toFixed(2));
 		unit = newUnit;
 	}
 
@@ -23,7 +23,7 @@
 	];
 
 	function selectPreset(km: number) {
-		distance = unit === 'km' ? km : Number(kmToMiles(km).toFixed(4));
+		distance = unit === 'km' ? km : Number(kmToMiles(km).toFixed(2));
 	}
 
 	function isPresetActive(km: number): boolean {
