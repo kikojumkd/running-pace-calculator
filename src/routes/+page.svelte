@@ -29,7 +29,7 @@
 	<title>Running Pace Calculator</title>
 </svelte:head>
 
-<main class="min-h-screen bg-[#ece9e3] px-4 py-8 overflow-x-hidden">
+<main class="min-h-screen bg-[var(--bg)] px-4 py-8 overflow-x-hidden">
 	<div class="max-w-md mx-auto space-y-3">
 
 		<DistanceInput bind:distance bind:unit />
@@ -47,7 +47,7 @@
 		<button
 			type="button"
 			onclick={reset}
-			class="w-full min-h-[44px] bg-white border border-stone-200 hover:bg-stone-50 active:bg-stone-100 text-stone-700 font-medium rounded-2xl transition-colors text-sm cursor-pointer overflow-hidden"
+			class="w-full min-h-[44px] bg-transparent border-[0.5px] text-[color:var(--ink3)] font-medium rounded-2xl text-sm cursor-pointer overflow-hidden transition-colors hover:bg-black/5"
 		>
 			Reset
 		</button>

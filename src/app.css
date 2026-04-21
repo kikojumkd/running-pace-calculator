@@ -1,17 +1,32 @@
+:root {
+	--bg: #ebebeb;
+	--surface: #e0e0e0;
+	--card: #f5f5f5;
+	--volt: #aaee32;
+	--volt-muted: #88c020;
+	--ink: #111111;
+	--ink2: #444444;
+	--ink3: #888888;
+	--border: rgba(0, 0, 0, 0.09);
+}
+
+body {
+	color: var(--ink);
+	background-color: var(--bg);
+}
+
 /* Global box-sizing + border reset. UnoCSS presetWind ships no preflight, so
    without this:
    - box-sizing defaults to content-box (inputs overflow their containers)
    - border-style is whatever the UA says: inset for <input> and outset for
-     <button>, which is the source of the two-tone 3D bevel (dark on
-     top/left for inputs, dark on bottom/right for buttons). Forcing solid
-     everywhere is how Tailwind's preflight fixes it. */
+     <button>, which is the source of the two-tone 3D bevel. */
 *,
 *::before,
 *::after {
 	box-sizing: border-box;
 	border-width: 0;
 	border-style: solid;
-	border-color: currentColor;
+	border-color: var(--border);
 }
 
 /* Force light color-scheme so Windows / dark-mode browsers don't render the

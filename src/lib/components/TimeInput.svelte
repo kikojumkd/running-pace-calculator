@@ -6,16 +6,15 @@
 	} = $props();
 </script>
 
-<div class="bg-white rounded-2xl border border-stone-200 shadow-sm p-4 overflow-hidden">
-	<p class="text-[10px] font-semibold uppercase tracking-widest text-stone-400 mb-3">Time</p>
+<div class="bg-[var(--card)] border-[0.5px] rounded-2xl p-4 overflow-hidden">
+	<p class="text-[10px] font-semibold uppercase tracking-widest text-[color:var(--ink3)] mb-3">Time</p>
 
-	<!-- Grid: labels in row 1, inputs + colons in row 2 -->
 	<div class="grid gap-x-2" style="grid-template-columns: 1fr 14px 1fr 14px 1fr">
-		<label for="time-hours" class="text-sm text-stone-600 mb-1.5">Hours</label>
+		<label for="time-hours" class="text-sm text-[color:var(--ink2)] mb-1.5">Hours</label>
 		<div></div>
-		<label for="time-minutes" class="text-sm text-stone-600 mb-1.5">Minutes</label>
+		<label for="time-minutes" class="text-sm text-[color:var(--ink2)] mb-1.5">Minutes</label>
 		<div></div>
-		<label for="time-seconds" class="text-sm text-stone-600 mb-1.5">Seconds</label>
+		<label for="time-seconds" class="text-sm text-[color:var(--ink2)] mb-1.5">Seconds</label>
 
 		<input
 			id="time-hours"
@@ -23,25 +22,25 @@
 			min="0"
 			max="99"
 			bind:value={hours}
-			class="w-full min-w-0 bg-white border border-stone-200 rounded-lg px-2 py-2 text-sm text-center focus:outline-none focus:border-stone-400 transition-colors"
+			class="w-full min-w-0 bg-[var(--surface)] border-[0.5px] rounded-lg px-2 py-2 text-sm text-center text-[color:var(--ink)] focus:outline-none transition-colors"
 		/>
-		<div class="flex items-center justify-center text-stone-500 text-xl leading-none">:</div>
+		<div class="flex items-center justify-center text-[color:var(--ink3)] text-xl leading-none">:</div>
 		<input
 			id="time-minutes"
 			type="number"
 			min="0"
 			max="59"
 			bind:value={minutes}
-			class="w-full min-w-0 bg-white border border-stone-200 rounded-lg px-2 py-2 text-sm text-center focus:outline-none focus:border-stone-400 transition-colors"
+			class="w-full min-w-0 bg-[var(--surface)] border-[0.5px] rounded-lg px-2 py-2 text-sm text-center text-[color:var(--ink)] focus:outline-none transition-colors"
 		/>
-		<div class="flex items-center justify-center text-stone-500 text-xl leading-none">:</div>
+		<div class="flex items-center justify-center text-[color:var(--ink3)] text-xl leading-none">:</div>
 		<input
 			id="time-seconds"
 			type="number"
 			min="0"
 			max="59"
 			bind:value={seconds}
-			class="w-full min-w-0 bg-white border border-stone-200 rounded-lg px-2 py-2 text-sm text-center focus:outline-none focus:border-stone-400 transition-colors"
+			class="w-full min-w-0 bg-[var(--surface)] border-[0.5px] rounded-lg px-2 py-2 text-sm text-center text-[color:var(--ink)] focus:outline-none transition-colors"
 		/>
 	</div>
 </div>
