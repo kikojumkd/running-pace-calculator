@@ -9,7 +9,7 @@
 
 	function roundDistance(value: number): number {
 		const rounded = Math.round(value);
-		return Math.abs(value - rounded) < 0.05 ? rounded : Number(value.toFixed(2));
+		return Math.abs(value - rounded) < 0.05 ? rounded : Number(value.toFixed(1));
 	}
 
 	function setUnit(newUnit: DistanceUnit) {
