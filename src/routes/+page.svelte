@@ -40,6 +40,7 @@
 			pacePerKm={pace.pacePerKm}
 			pacePerMile={pace.pacePerMile}
 			totalSeconds={pace.totalSeconds}
+			{unit}
 		/>
 
 		<PaceZones pacePerKm={pace.pacePerKm} />
