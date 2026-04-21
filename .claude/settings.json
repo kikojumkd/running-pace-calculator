@@ -1,0 +1,40 @@
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write|MultiEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "pnpm exec prettier --write --ignore-unknown \"$CLAUDE_TOOL_INPUT_PATH\" 2>/dev/null || true"
+          },
+          {
+            "type": "command",
+            "command": "pnpm exec eslint --fix --quiet \"$CLAUDE_TOOL_INPUT_PATH\" 2>/dev/null || true"
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo '[Hook] Command about to run: '\"$CLAUDE_TOOL_INPUT_COMMAND\""
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "pnpm typecheck 2>&1 | tail -20 || echo '[TypeCheck] Errors found - review before committing'"
+          }
+        ]
+      }
+    ]
+  }
+}
