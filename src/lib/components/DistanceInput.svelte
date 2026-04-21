@@ -7,11 +7,16 @@
 		unit: DistanceUnit;
 	} = $props();
 
+	function roundDistance(value: number): number {
+		const rounded = Math.round(value);
+		return Math.abs(value - rounded) < 0.05 ? rounded : Number(value.toFixed(2));
+	}
+
 	function setUnit(newUnit: DistanceUnit) {
 		if (newUnit === unit) return;
 		distance = newUnit === 'miles'
-			? Number(kmToMiles(distance).toFixed(2))
-			: Number(milesToKm(distance).toFixed(2));
+			? roundDistance(kmToMiles(distance))
+			: roundDistance(milesToKm(distance));
 		unit = newUnit;
 	}
 
@@ -23,7 +28,7 @@
 	];
 
 	function selectPreset(km: number) {
-		distance = unit === 'km' ? km : Number(kmToMiles(km).toFixed(2));
+		distance = unit === 'km' ? km : roundDistance(kmToMiles(km));
 	}
 
 	function isPresetActive(km: number): boolean {
