@@ -6,8 +6,10 @@
 	import { calculatePace, milesToKm } from '$lib/utils/pace';
 	import type { DistanceUnit } from '$lib/types';
 
+	let { data } = $props();
+
 	let distance = $state(10);
-	let unit = $state<DistanceUnit>('km');
+	let unit = $state<DistanceUnit>(data.unitPreference);
 	let hours = $state(0);
 	let minutes = $state(50);
 	let seconds = $state(0);

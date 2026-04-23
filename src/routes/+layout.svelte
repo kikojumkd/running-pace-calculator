@@ -13,17 +13,25 @@
 	}
 </script>
 
-{#if $page.url.pathname !== '/login'}
+{#if $page.url.pathname !== '/login' && $page.url.pathname !== '/settings'}
 	<header class="flex items-center justify-between px-4 py-3 max-w-md mx-auto">
 		{#if data.user}
 			<span class="text-sm text-[var(--ink3)]">{data.user.name}</span>
-			<button
-				type="button"
-				onclick={signOut}
-				class="text-sm text-[var(--ink3)] cursor-pointer bg-transparent hover:text-[var(--ink)]"
-			>
-				Sign out
-			</button>
+			<div class="flex items-center gap-3">
+				<a
+					href="/settings"
+					class="text-sm text-[var(--ink3)] hover:text-[var(--ink)] transition-colors"
+				>
+					Settings
+				</a>
+				<button
+					type="button"
+					onclick={signOut}
+					class="text-sm text-[var(--ink3)] cursor-pointer bg-transparent hover:text-[var(--ink)]"
+				>
+					Sign out
+				</button>
+			</div>
 		{:else}
 			<span class="text-sm text-[var(--ink3)]">Running Pace Calculator</span>
 			<div class="flex items-center gap-3">
