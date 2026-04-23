@@ -18,6 +18,30 @@
 	let totalSeconds = $derived(hours * 3600 + minutes * 60 + seconds);
 	let pace = $derived(calculatePace(distanceKm, totalSeconds));
 
+	let saving = $state(false);
+	let saved = $state(false);
+
+	async function saveRun() {
+		if (pace.pacePerKm <= 0) return;
+		saving = true;
+		saved = false;
+
+		await fetch('/api/runs', {
+			method: 'POST',
+			headers: { 'Content-Type': 'application/json' },
+			body: JSON.stringify({
+				distanceKm,
+				durationSeconds: totalSeconds,
+				pacePerKm: pace.pacePerKm,
+				pacePerMile: pace.pacePerMile
+			})
+		});
+
+		saving = false;
+		saved = true;
+		setTimeout(() => (saved = false), 2000);
+	}
+
 	function reset() {
 		distance = 10;
 		unit = 'km';
@@ -46,6 +70,23 @@
 		/>
 
 		<PaceZones pacePerKm={pace.pacePerKm} />
+
+		{#if data.user}
+			<button
+				type="button"
+				onclick={saveRun}
+				disabled={saving || pace.pacePerKm <= 0}
+				class="w-full min-h-[44px] bg-[var(--volt)] text-[var(--ink)] font-medium rounded-2xl text-sm cursor-pointer overflow-hidden transition-colors hover:bg-[var(--volt-muted)] disabled:opacity-50"
+			>
+				{#if saved}
+					Saved!
+				{:else if saving}
+					Saving...
+				{:else}
+					Save run
+				{/if}
+			</button>
+		{/if}
 
 		<button
 			type="button"

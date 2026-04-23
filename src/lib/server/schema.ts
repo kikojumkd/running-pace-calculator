@@ -1,4 +1,4 @@
-import { pgTable, text, timestamp, boolean } from 'drizzle-orm/pg-core';
+import { pgTable, text, timestamp, boolean, uuid, numeric, integer } from 'drizzle-orm/pg-core';
 
 export const user = pgTable('user', {
 	id: text('id').primaryKey(),
@@ -40,6 +40,19 @@ export const account = pgTable('account', {
 	password: text('password'),
 	createdAt: timestamp('created_at').notNull().defaultNow(),
 	updatedAt: timestamp('updated_at').notNull().defaultNow()
+});
+
+export const run = pgTable('run', {
+	id: uuid('id').primaryKey().defaultRandom(),
+	userId: text('user_id')
+		.notNull()
+		.references(() => user.id, { onDelete: 'cascade' }),
+	distanceKm: numeric('distance_km').notNull(),
+	durationSeconds: integer('duration_seconds').notNull(),
+	pacePerKm: integer('pace_per_km').notNull(),
+	pacePerMile: integer('pace_per_mile').notNull(),
+	label: text('label'),
+	createdAt: timestamp('created_at').defaultNow()
 });
 
 export const verification = pgTable('verification', {

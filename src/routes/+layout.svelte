@@ -13,11 +13,17 @@
 	}
 </script>
 
-{#if $page.url.pathname !== '/login' && $page.url.pathname !== '/settings'}
+{#if $page.url.pathname !== '/login' && $page.url.pathname !== '/settings' && $page.url.pathname !== '/runs'}
 	<header class="flex items-center justify-between px-4 py-3 max-w-md mx-auto">
 		{#if data.user}
 			<span class="text-sm text-[var(--ink3)]">{data.user.name}</span>
 			<div class="flex items-center gap-3">
+				<a
+					href="/runs"
+					class="text-sm text-[var(--ink3)] hover:text-[var(--ink)] transition-colors"
+				>
+					My runs
+				</a>
 				<a
 					href="/settings"
 					class="text-sm text-[var(--ink3)] hover:text-[var(--ink)] transition-colors"
