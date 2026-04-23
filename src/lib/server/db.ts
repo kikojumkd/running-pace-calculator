@@ -3,5 +3,14 @@ import postgres from 'postgres';
 import { env } from '$env/dynamic/private';
 import * as schema from './schema';
 
-const client = postgres(env.DATABASE_URL!, { prepare: false });
-export const db = drizzle(client, { schema });
+function createDb() {
+	const client = postgres(env.DATABASE_URL!, { prepare: false });
+	return drizzle(client, { schema });
+}
+
+type Db = ReturnType<typeof createDb>;
+let _db: Db;
+
+export function getDb() {
+	return (_db ??= createDb());
+}
