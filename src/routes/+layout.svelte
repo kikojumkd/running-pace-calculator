@@ -2,14 +2,14 @@
 	import 'virtual:uno.css';
 	import '../app.css';
 	import { authClient } from '$lib/auth-client';
-	import { goto } from '$app/navigation';
+	import { invalidateAll } from '$app/navigation';
 	import { page } from '$app/stores';
 
 	let { children, data } = $props();
 
 	async function signOut() {
 		await authClient.signOut();
-		goto('/');
+		await invalidateAll();
 	}
 </script>
 
