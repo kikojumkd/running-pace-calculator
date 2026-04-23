@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { authClient } from '$lib/auth-client';
-	import { goto } from '$app/navigation';
+	import { goto, invalidateAll } from '$app/navigation';
 	import { page } from '$app/stores';
 
 	let email = $state('');
@@ -19,6 +19,7 @@
 			if (result.error) {
 				error = result.error.message ?? 'Sign up failed';
 			} else {
+				await invalidateAll();
 				goto('/');
 			}
 		} else {
@@ -26,6 +27,7 @@
 			if (result.error) {
 				error = result.error.message ?? 'Sign in failed';
 			} else {
+				await invalidateAll();
 				goto('/');
 			}
 		}
