@@ -52,7 +52,7 @@
 </script>
 
 <svelte:head>
-	<title>Running Pace Calculator</title>
+	<title>Pacen</title>
 </svelte:head>
 
 <main class="min-h-screen bg-[var(--bg)] px-4 py-8 overflow-x-hidden">

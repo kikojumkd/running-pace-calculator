@@ -70,7 +70,7 @@
 </script>
 
 <svelte:head>
-	<title>Settings — Running Pace Calculator</title>
+	<title>Settings — Pacen</title>
 </svelte:head>
 
 <main class="min-h-screen bg-[var(--bg)] px-4 py-8">

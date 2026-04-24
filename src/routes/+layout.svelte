@@ -16,7 +16,10 @@
 {#if $page.url.pathname !== '/login' && $page.url.pathname !== '/settings' && $page.url.pathname !== '/runs'}
 	<header class="flex items-center justify-between px-4 py-3 max-w-md mx-auto">
 		{#if data.user}
-			<span class="text-sm text-[var(--ink3)]">{data.user.name}</span>
+			<a href="/" class="flex items-center gap-1.5 no-underline">
+				<img src="/icon-32.png" alt="" class="w-5 h-5" />
+				<span class="text-sm font-semibold text-[var(--ink)]">Pacen</span>
+			</a>
 			<div class="flex items-center gap-3">
 				<a
 					href="/runs"
@@ -39,7 +42,10 @@
 				</button>
 			</div>
 		{:else}
-			<span class="text-sm text-[var(--ink3)]">Running Pace Calculator</span>
+			<a href="/" class="flex items-center gap-1.5 no-underline">
+				<img src="/icon-32.png" alt="" class="w-5 h-5" />
+				<span class="text-sm font-semibold text-[var(--ink)]">Pacen</span>
+			</a>
 			<div class="flex items-center gap-3">
 				<a
 					href="/login"

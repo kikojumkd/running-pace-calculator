@@ -34,7 +34,7 @@
 </script>
 
 <svelte:head>
-	<title>My Runs — Running Pace Calculator</title>
+	<title>My Runs — Pacen</title>
 </svelte:head>
 
 <main class="min-h-screen bg-[var(--bg)] px-4 py-8">

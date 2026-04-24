@@ -41,7 +41,7 @@
 </script>
 
 <svelte:head>
-	<title>{isSignUp ? 'Sign Up' : 'Sign In'} — Running Pace Calculator</title>
+	<title>{isSignUp ? 'Sign Up' : 'Sign In'} — Pacen</title>
 </svelte:head>
 
 <main class="min-h-screen bg-[var(--bg)] px-4 py-8 flex items-center justify-center">
