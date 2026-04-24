@@ -17,8 +17,8 @@
 	<header class="flex items-center justify-between px-4 py-3 max-w-md mx-auto">
 		{#if data.user}
 			<a href="/" class="flex items-center gap-1.5 no-underline">
-				<img src="/icon-32.png" alt="" class="w-5 h-5" />
-				<span class="text-sm font-semibold text-[var(--ink)]">Pacen</span>
+				<img src="/icon-192.png" alt="" class="w-7 h-7" />
+				<span class="text-base font-bold text-[var(--ink)]">Pacen</span>
 			</a>
 			<div class="flex items-center gap-3">
 				<a
@@ -43,8 +43,8 @@
 			</div>
 		{:else}
 			<a href="/" class="flex items-center gap-1.5 no-underline">
-				<img src="/icon-32.png" alt="" class="w-5 h-5" />
-				<span class="text-sm font-semibold text-[var(--ink)]">Pacen</span>
+				<img src="/icon-192.png" alt="" class="w-7 h-7" />
+				<span class="text-base font-bold text-[var(--ink)]">Pacen</span>
 			</a>
 			<div class="flex items-center gap-3">
 				<a

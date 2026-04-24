@@ -47,9 +47,13 @@
 <main class="min-h-screen bg-[var(--bg)] px-4 py-8 flex items-center justify-center">
 	<div class="w-full max-w-sm space-y-4">
 
-		<h1 class="text-xl font-semibold text-center">
-			{isSignUp ? 'Create account' : 'Sign in'}
-		</h1>
+		<div class="flex flex-col items-center gap-2 mb-2">
+			<img src="/icon-192.png" alt="Pacen" class="w-16 h-16" />
+			<h1 class="text-xl font-bold">Welcome to Pacen</h1>
+			<p class="text-sm text-[var(--ink3)]">
+				{isSignUp ? 'Create an account to get started' : 'Sign in to continue'}
+			</p>
+		</div>
 
 		{#if error}
 			<p class="text-sm text-red-600 text-center">{error}</p>
