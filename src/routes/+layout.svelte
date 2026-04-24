@@ -16,9 +16,9 @@
 {#if $page.url.pathname !== '/login' && $page.url.pathname !== '/settings' && $page.url.pathname !== '/runs'}
 	<header class="flex items-center justify-between px-4 py-3 max-w-md mx-auto">
 		{#if data.user}
-			<a href="/" class="flex items-center gap-1.5 no-underline">
-				<img src="/icon-192.png" alt="" class="w-7 h-7" />
-				<span class="text-base font-bold text-[var(--ink)]">Pacen</span>
+			<a href="/" class="flex items-center gap-0.5 no-underline">
+				<img src="/icon-192.png" alt="" class="w-20 h-20 -ml-3" />
+				<span class="text-xl font-bold text-[var(--ink)]">Pacen</span>
 			</a>
 			<div class="flex items-center gap-3">
 				<a
@@ -42,9 +42,9 @@
 				</button>
 			</div>
 		{:else}
-			<a href="/" class="flex items-center gap-1.5 no-underline">
-				<img src="/icon-192.png" alt="" class="w-7 h-7" />
-				<span class="text-base font-bold text-[var(--ink)]">Pacen</span>
+			<a href="/" class="flex items-center gap-0.5 no-underline">
+				<img src="/icon-192.png" alt="" class="w-20 h-20 -ml-3" />
+				<span class="text-xl font-bold text-[var(--ink)]">Pacen</span>
 			</a>
 			<div class="flex items-center gap-3">
 				<a

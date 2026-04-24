@@ -47,8 +47,8 @@
 <main class="min-h-screen bg-[var(--bg)] px-4 py-8 flex items-center justify-center">
 	<div class="w-full max-w-sm space-y-4">
 
-		<div class="flex flex-col items-center gap-2 mb-2">
-			<img src="/icon-192.png" alt="Pacen" class="w-16 h-16" />
+		<div class="flex flex-col items-center gap-0.5 mb-2">
+			<img src="/icon-512.png" alt="Pacen" class="w-44 h-44" />
 			<h1 class="text-xl font-bold">Welcome to Pacen</h1>
 			<p class="text-sm text-[var(--ink3)]">
 				{isSignUp ? 'Create an account to get started' : 'Sign in to continue'}
