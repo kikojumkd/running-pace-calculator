@@ -1,9 +1,9 @@
-# Running Pace Calculator — Project Memory
+# Pacen — Project Memory
 
 ## Project Overview
 
-A mobile-first running pace calculator built as a personal tool and learning project.
-Deployed on Vercel under a personal GitHub account.
+**Pacen** (pacen.app) — a mobile-first running pace calculator built as a personal tool and learning project.
+Deployed on Vercel at pacen.app under a personal GitHub account.
 
 ---
 
