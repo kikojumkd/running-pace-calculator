@@ -36,7 +36,11 @@
       "mcp__playwright__browser_press_key",
       "mcp__playwright__browser_fill_form",
       "mcp__playwright__browser_wait_for",
-      "Bash(pnpm add *)"
+      "Bash(pnpm add *)",
+      "Bash(pkill -f \"vite\")",
+      "Bash(jobs *)",
+      "Bash(kill %1)",
+      "Bash(taskkill //F //IM node.exe)"
     ]
   }
 }
